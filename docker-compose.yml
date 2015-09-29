@@ -1,0 +1,17 @@
+x:
+  image: mobile-summit:cloud9
+  ports:
+   - "80:6080"
+   - 4200
+   - "8080:8080"
+  volumes:
+    - /workspace
+    - ~/Gitpub/rmsdk-calabash:/workspace
+#cloud9:
+#  image: kdelfour/cloud9-docker
+#  volumes_from:
+#   - android
+#  ports:
+#   - "8080:80"
+#  links:
+#    - android
