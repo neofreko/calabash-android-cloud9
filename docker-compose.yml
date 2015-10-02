@@ -1,12 +1,14 @@
-x:
+y:
   image: mobile-summit:cloud9
   ports:
-   - "80:6080"
+   - 6080
    - 4200
-   - "8080:8080"
+   - 8080
   volumes:
     - /workspace
-    - ~/Gitpub/rmsdk-calabash:/workspace
+    - ~/Playground/mobile-summit:/workspace
+    - /dev/bus/usb:/dev/bus/usb
+  privileged: true
 #cloud9:
 #  image: kdelfour/cloud9-docker
 #  volumes_from:

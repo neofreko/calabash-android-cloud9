@@ -50,6 +50,14 @@ ADD conf/cloud9.conf /opt/cloud9.conf
 USER root
 RUN cat /opt/cloud9.conf >> /opt/supervisord.conf
 
+RUN sed -i -e 's_command=/opt/noVNC/utils/launch.sh_command=/opt/noVNC/utils/launch.sh --vnc 0.0.0.0:5900_' /opt/supervisord.conf
+
 USER user
+
+#manymo
+RUN curl https://raw.githubusercontent.com/manymo/manymo/master/manymo-installer | bash
+
 VOLUME /workspace
 #ADD $app$ /home/user/application.apk
+
+EXPOSE 8080
